@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.10.0
   flutter_test:
     sdk: flutter
 
@@ -87,3 +88,14 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+flutter_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/main_design/main_logo.png"
+  web:
+    generate: true
+    image_path: "assets/images/main_design/main_logo.png"
+  windows:
+    generate: true
