@@ -1,5 +1,6 @@
 import 'package:fire_safty_academy/views/splach_screen/main_splash.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/themes/app_theme.dart';
 
@@ -18,8 +19,25 @@ class _MyAppState extends State<MyApp> {
   // نستخدم ValueNotifier
   ValueNotifier<bool> isDark = ValueNotifier(true);
 
-  void toggleTheme() {
+  @override
+  void initState() {
+    super.initState();
+    loadTheme();
+  }
+  void loadTheme() async {
+    final prefs = await SharedPreferences.getInstance();
+    bool savedTheme = prefs.getBool('isDarkTheme') ?? true;
+    isDark.value = savedTheme;
+  }
+  // void toggleTheme() {
+  //   isDark.value = !isDark.value;
+  // }
+  void toggleTheme() async {
+    final prefs = await SharedPreferences.getInstance();
+
     isDark.value = !isDark.value;
+
+    await prefs.setBool('isDarkTheme', isDark.value);
   }
 
   @override
