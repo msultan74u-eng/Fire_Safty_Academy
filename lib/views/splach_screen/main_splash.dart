@@ -63,12 +63,60 @@ class _MainSplashState extends State<MainSplash>
     checkFirstTime();
 
   }
+  // void checkFirstTime() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //
+  //   bool seen = prefs.getBool('onboarding_seen') ?? false;
+  //
+  //   Timer(const Duration(seconds: 5), () {
+  //     if (seen) {
+  //       Navigator.pushReplacement(
+  //         context,
+  //         MaterialPageRoute(
+  //           builder: (context) => HomePage(
+  //             isDarkNotifier: widget.isDarkNotifier,
+  //             toggleTheme: widget.toggleTheme,
+  //           ),
+  //         ),
+  //       );
+  //     } else {
+  //       Navigator.pushReplacement(
+  //         context,
+  //         MaterialPageRoute(
+  //           builder: (context) => OnboardingScreen(
+  //             isDarkNotifier: widget.isDarkNotifier,
+  //             toggleTheme: widget.toggleTheme,
+  //           ),
+  //         ),
+  //       );
+  //     }
+  //   });
+  // }
+
   void checkFirstTime() async {
     final prefs = await SharedPreferences.getInstance();
-
     bool seen = prefs.getBool('onboarding_seen') ?? false;
 
     Timer(const Duration(seconds: 5), () {
+
+      double width = MediaQuery.of(context).size.width;
+
+      // لو الشاشة أكبر من 600 يعتبر Tablet / Desktop
+      bool isMobile = width < 600;
+
+      if (!isMobile) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomePage(
+              isDarkNotifier: widget.isDarkNotifier,
+              toggleTheme: widget.toggleTheme,
+            ),
+          ),
+        );
+        return;
+      }
+
       if (seen) {
         Navigator.pushReplacement(
           context,
@@ -119,16 +167,46 @@ class _MainSplashState extends State<MainSplash>
 
           const Spacer(),
 
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 40),
+          //   child: AnimatedBuilder(
+          //     animation: controller,
+          //     builder: (context, child) {
+          //       return LinearProgressIndicator(
+          //         value: controller.value,
+          //         minHeight: 6,
+          //         backgroundColor: Colors.grey[300],
+          //         valueColor: const AlwaysStoppedAnimation(Colors.red),
+          //       );
+          //     },
+          //   ),
+          // ),
+
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: AnimatedBuilder(
-              animation: controller,
-              builder: (context, child) {
-                return LinearProgressIndicator(
-                  value: controller.value,
-                  minHeight: 6,
-                  backgroundColor: Colors.grey[300],
-                  valueColor: const AlwaysStoppedAnimation(Colors.red),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                double screenWidth = MediaQuery.of(context).size.width;
+                bool isMobile = screenWidth < 600;
+
+                double progressWidth = isMobile ? screenWidth : screenWidth * 0.25;
+
+                return Center(
+                  child: SizedBox(
+                    width: progressWidth,
+                    child: AnimatedBuilder(
+                      animation: controller,
+                      builder: (context, child) {
+                        return LinearProgressIndicator(
+                          value: controller.value,
+                          minHeight: 6,
+                          backgroundColor: Colors.grey[300],
+                          valueColor: const AlwaysStoppedAnimation(Colors.red),
+                        );
+                      },
+                    ),
+                  ),
                 );
               },
             ),
