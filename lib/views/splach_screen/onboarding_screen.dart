@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../home_page.dart';
 
@@ -97,9 +98,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           const SizedBox(height: 20),
 
           ElevatedButton(
-            onPressed: () {
+            // onPressed: () {
+            //   if (currentPage == 2) {
+            //     // go to home page
+            //     Navigator.pushReplacement(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => HomePage(
+            //           isDarkNotifier: widget.isDarkNotifier,
+            //           toggleTheme: widget.toggleTheme,
+            //         ),
+            //       ),
+            //     );
+            //   } else {
+            //     controller.nextPage(
+            //       duration: const Duration(milliseconds: 500),
+            //       curve: Curves.ease,
+            //     );
+            //   }
+            // },
+
+            onPressed: () async {
               if (currentPage == 2) {
-                // go to home page
+
+                final prefs = await SharedPreferences.getInstance();
+                await prefs.setBool('onboarding_seen', true);
+
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
@@ -109,6 +133,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                 );
+
               } else {
                 controller.nextPage(
                   duration: const Duration(milliseconds: 500),
@@ -116,6 +141,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 );
               }
             },
+
             child: Text(currentPage == 2 ? "Start" : "Next"),
           ),
 

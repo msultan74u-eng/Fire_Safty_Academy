@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../home_page.dart';
 import 'onboarding_screen.dart';
 
 class MainSplash extends StatefulWidget {
@@ -21,6 +23,31 @@ class _MainSplashState extends State<MainSplash>
   late AnimationController controller;
   late Animation<double> animation;
 
+  // @override
+  // void initState() {
+  //   super.initState();
+  //
+  //   controller = AnimationController(
+  //     vsync: this,
+  //     duration: const Duration(seconds: 3),
+  //   );
+  //
+  //   animation = Tween<double>(begin: 0, end: 1).animate(controller);
+  //
+  //   controller.forward();
+  //
+  //   Timer(const Duration(seconds: 5), () {
+  //     Navigator.pushReplacement(
+  //       context,
+  //       MaterialPageRoute(
+  //         builder: (context) => OnboardingScreen(
+  //           isDarkNotifier: widget.isDarkNotifier,
+  //           toggleTheme: widget.toggleTheme,
+  //         ),
+  //       ),
+  //     );
+  //   });
+  // }
   @override
   void initState() {
     super.initState();
@@ -33,17 +60,36 @@ class _MainSplashState extends State<MainSplash>
     animation = Tween<double>(begin: 0, end: 1).animate(controller);
 
     controller.forward();
+    checkFirstTime();
+
+  }
+  void checkFirstTime() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    bool seen = prefs.getBool('onboarding_seen') ?? false;
 
     Timer(const Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => OnboardingScreen(
-            isDarkNotifier: widget.isDarkNotifier,
-            toggleTheme: widget.toggleTheme,
+      if (seen) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomePage(
+              isDarkNotifier: widget.isDarkNotifier,
+              toggleTheme: widget.toggleTheme,
+            ),
           ),
-        ),
-      );
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => OnboardingScreen(
+              isDarkNotifier: widget.isDarkNotifier,
+              toggleTheme: widget.toggleTheme,
+            ),
+          ),
+        );
+      }
     });
   }
 
@@ -67,7 +113,7 @@ class _MainSplashState extends State<MainSplash>
             child: SizedBox(
               width: 180,
               height: 180,
-              child: Image.asset('assets/images/main_design/Logo_Fire.png'),
+              child: Image.asset('assets/images/main_design/main_logo.png'),
             ),
           ),
 
