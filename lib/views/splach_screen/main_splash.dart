@@ -19,13 +19,15 @@ class MainSplash extends StatefulWidget {
 }
 
 class _MainSplashState extends State<MainSplash>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   late AnimationController controller;
   late Animation<double> animation;
 
   @override
   void initState() {
     super.initState();
+
+    WidgetsBinding.instance.addObserver(this);
 
     controller = AnimationController(
       vsync: this,
@@ -34,19 +36,28 @@ class _MainSplashState extends State<MainSplash>
 
     animation = Tween<double>(begin: 0, end: 1).animate(controller);
 
-    controller.forward();
+    controller.forward(from: 0);
+
     checkFirstTime();
   }
 
-  void checkFirstTime() async {
+  /// عندما يعود التطبيق من الخلفية
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      controller.forward(from: 0);
+    }
+  }
+
+  Future<void> checkFirstTime() async {
     final prefs = await SharedPreferences.getInstance();
     bool seen = prefs.getBool('onboarding_seen') ?? false;
 
     Timer(const Duration(seconds: 5), () {
-      double width = MediaQuery.of(context).size.width;
+      if (!mounted) return;
 
-      // لو الشاشة أكبر من 600 يعتبر Tablet / Desktop
-      bool isMobile = width < 600;
+      double width = MediaQuery.of(context).size.width;
+      bool isMobile = width < 720;
 
       if (!isMobile) {
         Navigator.pushReplacement(
@@ -87,6 +98,7 @@ class _MainSplashState extends State<MainSplash>
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     controller.dispose();
     super.dispose();
   }
@@ -95,7 +107,6 @@ class _MainSplashState extends State<MainSplash>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       body: Column(
         children: [
           const Spacer(),
