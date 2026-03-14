@@ -17,30 +17,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<Widget> webActions = [
+    IconButton(
+      icon: const Icon(Icons.notifications, color: Colors.white),
+      onPressed: () {},
+      tooltip: "Notifications",
+    ),
+    IconButton(
+      icon: const Icon(Icons.search, color: Colors.white),
+      onPressed: () {},
+      tooltip: 'Search',
+    ),
+    IconButton(
+      icon: const Icon(Icons.settings, color: Colors.white),
+      onPressed: () {},
+      tooltip: 'Settings',
+    ),
+    IconButton(
+      icon: const Icon(Icons.help_outline, color: Colors.white),
+      onPressed: () {},
+      tooltip: 'Help',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
         isDarkNotifier: widget.isDarkNotifier,
         toggleTheme: widget.toggleTheme,
-        webActionsIcons: [
-          IconButton(
-            icon: Icon(Icons.notifications, color: Colors.white),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.search, color: Colors.white),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.settings, color: Colors.white),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.help_outline, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
+        webActionsIcons: webActions,
       ),
       body: Container(color: Theme.of(context).scaffoldBackgroundColor),
     );
