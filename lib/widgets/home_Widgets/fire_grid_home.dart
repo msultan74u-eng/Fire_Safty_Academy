@@ -35,10 +35,11 @@ class _FireGridHomeState extends State<FireGridHome> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 320, // أقصى عرض للكارد
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
+        childAspectRatio: 1,
       ),
       itemCount: items.length,
       itemBuilder: (context, index) {

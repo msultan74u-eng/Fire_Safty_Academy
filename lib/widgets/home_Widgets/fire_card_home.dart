@@ -61,63 +61,76 @@ class _FireCardHomeState extends State<FireCardHome>
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: SizedBox(
-                width: double.infinity,
-                height: 180,
-                child: Image.asset(widget.backgroundImage, fit: BoxFit.cover),
-              ),
-            ),
 
-            // عنوان الكارت
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
               child: Container(
-                height: 35,
+                width: double.infinity,
+                height: double.infinity,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface.withOpacity(0.9),
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(12),
-                    bottomRight: Radius.circular(12),
+                  image: DecorationImage(
+                    image: AssetImage(widget.backgroundImage),
+                    fit: BoxFit.cover,
                   ),
                 ),
-                alignment: Alignment.center,
-                child: Text(
-                  widget.title,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-                ),
-              ),
-            ),
 
-            // أيقونة الكارت
-            Positioned(
-              top: 20, // تحدد بعده من الأعلى
-              left: 0, // يمين / يسار
-              right: 0,
-              child: Align(
-                alignment: Alignment.topCenter, // مكان الايقونة بالوسط أفقيًا
-                child: Container(
-                  height: 92, // ارتفاع الايقونة
-                  width: 128, // عرض الايقونة
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.white, width: 2),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 6,
-                        offset: const Offset(0, 3),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 14,
+                        ),
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.white, width: 2),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.3),
+                                  blurRadius: 6,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                widget.iconImage,
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(widget.iconImage, fit: BoxFit.cover),
-                  ),
+                    ),
+
+                    Container(
+                      height: 35,
+                      decoration: BoxDecoration(
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.surface.withOpacity(0.9),
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12),
+                        ),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        widget.title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
