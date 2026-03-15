@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/custom_app_bar.dart';
+import '../widgets/home_Widgets/Search_card.dart';
+import '../widgets/home_Widgets/carousel_home.dart';
+import '../widgets/home_Widgets/custom_app_bar.dart';
+import '../widgets/home_Widgets/fire_grid_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -48,7 +50,28 @@ class _HomePageState extends State<HomePage> {
         toggleTheme: widget.toggleTheme,
         webActionsIcons: webActions,
       ),
-      body: Container(color: Theme.of(context).scaffoldBackgroundColor),
+
+      body: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              width: double.infinity,
+
+              child: CarouselHome(),
+            ),
+            Divider(
+              endIndent: MediaQuery.of(context).size.width * 0.2,
+              indent: MediaQuery.of(context).size.width * 0.2,
+            ),
+            SearchCard(),
+            const SizedBox(height: 6),
+
+            Expanded(child: FireGridHome()),
+          ],
+        ),
+      ),
     );
   }
 }
