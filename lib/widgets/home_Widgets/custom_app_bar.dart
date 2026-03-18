@@ -4,12 +4,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final ValueNotifier<bool> isDarkNotifier;
   final VoidCallback toggleTheme;
   final List<Widget>? webActionsIcons;
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   const CustomAppBar({
     super.key,
     required this.isDarkNotifier,
     required this.toggleTheme,
+
     this.webActionsIcons,
+    required this.scaffoldKey,
   });
 
   @override
@@ -35,7 +38,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: isMobile
           ? IconButton(
               icon: const Icon(Icons.menu, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                scaffoldKey.currentState!.openDrawer();
+              },
             )
           : Padding(
               padding: const EdgeInsets.all(8.0),
