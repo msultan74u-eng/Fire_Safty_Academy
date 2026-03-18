@@ -51,18 +51,22 @@ class _FireCardHomeState extends State<FireCardHome>
         scale: _scale,
         duration: const Duration(milliseconds: 100),
         curve: Curves.easeInOut,
-        child: Stack(
-          children: [
-            // الخلفية
-            Card(
-              elevation: 4,
-              margin: EdgeInsets.zero,
-              clipBehavior: Clip.antiAlias,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
+        child: Card(
+          elevation: 4,
+          margin: EdgeInsets.zero,
+          clipBehavior: Clip.antiAlias,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              // ارتفاع الـ Card
+              final cardHeight = constraints.maxHeight;
 
-              child: Container(
+              // اجعل ارتفاع العنوان 20% من ارتفاع الكارت
+              final titleHeight = cardHeight * 0.2;
+
+              return Container(
                 width: double.infinity,
                 height: double.infinity,
                 decoration: BoxDecoration(
@@ -71,47 +75,59 @@ class _FireCardHomeState extends State<FireCardHome>
                     fit: BoxFit.cover,
                   ),
                 ),
-
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 14,
-                        ),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: Colors.white, width: 2),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.3),
-                                  blurRadius: 6,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ],
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final availableHeight = constraints.maxHeight;
+
+                          final verticalPadding = availableHeight * 0.05;
+
+                          final iconHeight =
+                              availableHeight - (verticalPadding * 2);
+
+                          return Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: verticalPadding,
+                              horizontal: verticalPadding,
                             ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(
-                                widget.iconImage,
-                                fit: BoxFit.cover,
-                                width: double.infinity,
-                                height: double.infinity,
+                            child: Container(
+                              width: double.infinity,
+                              height: iconHeight,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 2,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.3),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.asset(
+                                  widget.iconImage,
+                                  fit: BoxFit.cover,
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                ),
                               ),
                             ),
-                          ),
-                        ),
+                          );
+                        },
                       ),
                     ),
 
+                    // Container للعنوان responsive
                     Container(
-                      height: 35,
+                      height: titleHeight,
                       decoration: BoxDecoration(
                         color: Theme.of(
                           context,
@@ -122,19 +138,22 @@ class _FireCardHomeState extends State<FireCardHome>
                         ),
                       ),
                       alignment: Alignment.center,
-                      child: Text(
-                        widget.title,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.onSurface,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          widget.title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).colorScheme.onSurface,
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
-              ),
-            ),
-          ],
+              );
+            },
+          ),
         ),
       ),
     );
