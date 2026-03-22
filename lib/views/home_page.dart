@@ -1,10 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import '../constants/web_actions.dart';
 import '../widgets/home_Widgets/Search_card.dart';
 import '../widgets/home_Widgets/carousel_home.dart';
 import '../widgets/home_Widgets/custom_app_bar.dart';
 import '../widgets/home_Widgets/drawer_home.dart';
 import '../widgets/home_Widgets/fire_grid_home.dart';
+import '../widgets/home_Widgets/media_sub_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -21,38 +23,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Widget> webActions = [
-    IconButton(
-      icon: const Icon(Icons.notifications, color: Colors.white),
-      onPressed: () {},
-      tooltip: "Notifications",
-    ),
-    IconButton(
-      icon: const Icon(Icons.search, color: Colors.white),
-      onPressed: () {},
-      tooltip: 'Search',
-    ),
-    IconButton(
-      icon: const Icon(Icons.settings, color: Colors.white),
-      onPressed: () {},
-      tooltip: 'Settings',
-    ),
-    IconButton(
-      icon: const Icon(Icons.help_outline, color: Colors.white),
-      onPressed: () {},
-      tooltip: 'Help',
-    ),
-  ];
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     double availableHeight =
         MediaQuery.of(context).size.height -
-        kToolbarHeight - // ارتفاع الـ AppBar
-        (MediaQuery.of(context).padding.top + 54); // الـ status bar
+        kToolbarHeight -
+        (MediaQuery.of(context).padding.top + 54);
 
-    double gridWidth = availableHeight / 5.3;
+    double gridWidth = availableHeight / 7.2;
 
     double screenWidth = MediaQuery.of(context).size.width;
     bool isMobile = screenWidth < 720;
@@ -62,7 +42,12 @@ class _HomePageState extends State<HomePage> {
       appBar: CustomAppBar(
         isDarkNotifier: widget.isDarkNotifier,
         toggleTheme: widget.toggleTheme,
-        webActionsIcons: webActions,
+        webActionsIcons: WebActions.build(
+          onNotifications: () {},
+          onSearch: () {},
+          onSettings: () {},
+          onHelp: () {},
+        ),
         scaffoldKey: scaffoldKey,
       ),
 
@@ -84,12 +69,17 @@ class _HomePageState extends State<HomePage> {
                   SearchCard(),
                   const SizedBox(height: 6),
 
-                  Expanded(child: FireGridHome()),
+                  Expanded(
+                    child: FireGridHome(
+                      isDarkNotifier: widget.isDarkNotifier,
+                      toggleTheme: widget.toggleTheme,
+                    ),
+                  ),
                 ],
               ),
             )
           : Padding(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.only(bottom: 4, left: 12, right: 12),
               child: Row(
                 children: [
                   Expanded(
@@ -106,13 +96,30 @@ class _HomePageState extends State<HomePage> {
                   VerticalDivider(),
                   Expanded(
                     flex: 4,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Expanded(child: CarouselHome())],
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: 42,
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: ConstrainedBox(
+                                  constraints: const BoxConstraints(
+                                    maxWidth: 400,
+                                  ),
+                                  child: MediaSubBar(),
+                                ),
+                              ),
+                            ),
+                            Expanded(child: CarouselHome()),
+                          ],
+                        );
+                      },
                     ),
                   ),
                   VerticalDivider(),
-
                   SizedBox(
                     width: gridWidth,
                     child: Column(
@@ -127,17 +134,18 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        // خلي الـ Grid مرن بحيث يقلص تلقائي
                         Flexible(
-                          flex: 9, // تعطيه وزن أكبر من النص
-                          child: FireGridHome(),
+                          flex: 9,
+                          child: FireGridHome(
+                            isDarkNotifier: widget.isDarkNotifier,
+                            toggleTheme: widget.toggleTheme,
+                          ),
                         ),
 
                         const Divider(),
 
-                        // خلي النص مرن وauto size
                         Flexible(
-                          flex: 1, // أقل وزن للنص
+                          flex: 1,
                           child: Container(
                             decoration: BoxDecoration(
                               border: BoxBorder.all(color: Colors.black12),
@@ -153,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.blue,
                                 ),
                                 maxLines: 1,
-                                minFontSize: 8, // أصغر حجم ممكن
+                                minFontSize: 8,
                                 maxFontSize: 16,
                                 overflow: TextOverflow.ellipsis,
                               ),

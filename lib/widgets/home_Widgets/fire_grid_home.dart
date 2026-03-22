@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../../views/fire_page.dart';
 import 'fire_card_home.dart';
 
 class FireGridHome extends StatefulWidget {
-  const FireGridHome({super.key});
+  final ValueNotifier<bool> isDarkNotifier;
+  final VoidCallback toggleTheme;
+
+  const FireGridHome({
+    super.key,
+    required this.isDarkNotifier,
+    required this.toggleTheme,
+  });
 
   @override
   State<FireGridHome> createState() => _FireGridHomeState();
@@ -32,34 +40,6 @@ class _FireGridHomeState extends State<FireGridHome> {
       "icon": "assets/images/main_design/facp_0002.jpg",
     },
   ];
-  // @override
-  // Widget build(BuildContext context) {
-  //   double screenWidth = MediaQuery.of(context).size.width;
-  //   bool isMobile = screenWidth < 720;
-  //   return GridView.builder(
-  //     scrollDirection: isMobile ? Axis.vertical : Axis.horizontal,
-  //     gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-  //       maxCrossAxisExtent: 320, // أقصى عرض للكارد
-  //       crossAxisSpacing: 10,
-  //       mainAxisSpacing: 10,
-  //       childAspectRatio: 1,
-  //     ),
-  //     itemCount: items.length,
-  //     itemBuilder: (context, index) {
-  //       final item = items[index];
-  //       return FireCardHome(
-  //         title: item["title"]!,
-  //         backgroundImage: item["bg"]!,
-  //         iconImage: item["icon"]!,
-  //         onTap: () {
-  //           ScaffoldMessenger.of(
-  //             context,
-  //           ).showSnackBar(SnackBar(content: Text('${item["title"]} clicked')));
-  //         },
-  //       );
-  //     },
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -83,8 +63,14 @@ class _FireGridHomeState extends State<FireGridHome> {
               backgroundImage: item["bg"]!,
               iconImage: item["icon"]!,
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('${item["title"]} clicked')),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FirePage(
+                      isDarkNotifier: widget.isDarkNotifier,
+                      toggleTheme: widget.toggleTheme,
+                    ),
+                  ),
                 );
               },
             );
