@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../cubits/section_cubit/section_cubit.dart';
+import '../../cubits/section_cubit/section_state.dart';
 import '../../views/fire_page.dart';
+import '../../models/section_model.dart';
 import 'fire_card_home.dart';
 
-class FireGridHome extends StatefulWidget {
+class FireGridHome extends StatelessWidget {
   final ValueNotifier<bool> isDarkNotifier;
   final VoidCallback toggleTheme;
 
@@ -14,68 +17,58 @@ class FireGridHome extends StatefulWidget {
   });
 
   @override
-  State<FireGridHome> createState() => _FireGridHomeState();
-}
-
-class _FireGridHomeState extends State<FireGridHome> {
-  final items = [
-    {
-      "title": "Fire Alarm",
-      "bg": "assets/images/main_design/fire_bg_001.jpg",
-      "icon": "assets/images/main_design/facp_0002.jpg",
-    },
-    {
-      "title": "Fire Fighting",
-      "bg": "assets/images/main_design/fire_bg_001.jpg",
-      "icon": "assets/images/main_design/facp_0002.jpg",
-    },
-    {
-      "title": "Detectors",
-      "bg": "assets/images/main_design/fire_bg_001.jpg",
-      "icon": "assets/images/main_design/facp_0002.jpg",
-    },
-    {
-      "title": "Extinguishers",
-      "bg": "assets/images/main_design/fire_bg_001.jpg",
-      "icon": "assets/images/main_design/facp_0002.jpg",
-    },
-  ];
-
-  @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        bool isMobile = constraints.maxWidth < 720;
+    return BlocBuilder<SectionCubit, SectionState>(
+      builder: (context, state) {
+        if (state is SectionLoading) {
+          return const Center(child: CircularProgressIndicator());
+        }
 
-        return GridView.builder(
-          scrollDirection: isMobile ? Axis.vertical : Axis.horizontal,
-          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 320,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 1,
-          ),
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return FireCardHome(
-              title: item["title"]!,
-              backgroundImage: item["bg"]!,
-              iconImage: item["icon"]!,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FirePage(
-                      isDarkNotifier: widget.isDarkNotifier,
-                      toggleTheme: widget.toggleTheme,
-                    ),
-                  ),
-                );
-              },
-            );
-          },
-        );
+        if (state is SectionError) {
+          return Center(child: Text(state.message));
+        }
+
+        if (state is SectionLoaded) {
+          final List<Section> sections = state.sections;
+
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              bool isMobile = constraints.maxWidth < 720;
+              return GridView.builder(
+                scrollDirection: isMobile ? Axis.vertical : Axis.horizontal,
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 320,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 1,
+                ),
+                itemCount: sections.length,
+                itemBuilder: (context, index) {
+                  final section = sections[index];
+                  return FireCardHome(
+                    title: section.sectionTitle,
+                    backgroundImage:
+                        'assets/images/main_design/fire_bg_001.jpg',
+                    iconImage: 'assets/images/main_design/facp_0002.jpg',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FirePage(
+                            isDarkNotifier: isDarkNotifier,
+                            toggleTheme: toggleTheme,
+                            sectionId: section.sectionId,
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              );
+            },
+          );
+        }
+        return const SizedBox();
       },
     );
   }
