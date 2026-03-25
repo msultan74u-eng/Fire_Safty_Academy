@@ -1,0 +1,2946 @@
+{
+  "sections": [
+    {
+      "sectionId": "fire_alarm",
+      "sectionTitle": "Fire Alarm Systems",
+      "fire_alarm_system_types": [
+        {
+          "type": "Conventional Fire Alarm System",
+          "images": [
+            "assets/images/fire_alarm/conventional_1.jpg",
+            "assets/images/fire_alarm/conventional_2.jpg"
+          ],
+          "principle": "The building is divided into zones. Each zone contains multiple detectors connected to the control panel.",
+          "characteristics": [
+            "Simple wiring",
+            "Low installation cost",
+            "Suitable for small buildings"
+          ],
+          "advantages": [
+            "Easy to install",
+            "Low maintenance cost",
+            "Simple operation"
+          ],
+          "disadvantages": [
+            "Cannot identify the exact detector location",
+            "Requires more wiring",
+            "Not suitable for large buildings"
+          ],
+          "applications": [
+            "Small offices",
+            "Small schools",
+            "Shops",
+            "Small residential buildings"
+          ]
+        },
+        {
+          "type": "Addressable Fire Alarm System",
+          "images": [
+            "assets/images/fire_alarm/addressable_1.jpg",
+            "assets/images/fire_alarm/addressable_2.jpg"
+          ],
+          "principle": "Each device has a unique digital address and communicates with the control panel through a loop.",
+          "characteristics": [
+            "Intelligent communication",
+            "Loop wiring",
+            "Device identification"
+          ],
+          "advantages": [
+            "Precise fire location",
+            "Less wiring",
+            "Easy maintenance"
+          ],
+          "applications": [
+            "Hospitals",
+            "Airports",
+            "Hotels",
+            "Shopping malls"
+          ]
+        }
+      ],
+      "devices": {
+        "fireAlarmControl": [
+          {
+            "id": "1",
+            "name": "Fire Alarm Control Panel (FACP)",
+            "category": "Control Equipment",
+            "types": [
+              {
+                "type": "Addressable FACP",
+                "description": "Central unit controlling all fire alarm devices, monitors zones and initiates alarms.",
+                "working_principle": "Receives signals from detectors and manual devices, processes them, and triggers notifications.",
+                "installation": "Installed in a secure control room, easily accessible for fire safety personnel.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "FACP-5000",
+                    "images": [
+                      "assets/images/honeywell_facp_front.png",
+                      "assets/images/honeywell_facp_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "120-240V AC",
+                      "current": "2A",
+                      "operating_temperature": "0 to 50 C",
+                      "zones_supported": "Up to 128 zones"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/facp.mp4"
+                ]
+              },
+              {
+                "type": "Conventional FACP",
+                "description": "Controls basic fire alarm systems using conventional circuits.",
+                "working_principle": "Monitors individual circuits and triggers alarms on detection.",
+                "installation": "Installed in control rooms or accessible panels in buildings.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "CFACP-300",
+                    "images": [
+                      "assets/images/siemens_facp_front.png",
+                      "assets/images/siemens_facp_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "120-240V AC",
+                      "current": "1.5A",
+                      "operating_temperature": "0 to 50 C",
+                      "zones_supported": "Up to 32 zones"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/conventional_facp.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Remote Annunciator Panel",
+            "category": "Control Equipment",
+            "types": [
+              {
+                "type": "LED Display Panel",
+                "description": "Remote panel displays status of FACP with LEDs and indicators.",
+                "working_principle": "Connects to FACP to mirror alarms and system status.",
+                "installation": "Installed at building entrances or security rooms for quick access.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "RAP-100",
+                    "images": [
+                      "assets/images/notifier_remote_panel_front.png",
+                      "assets/images/notifier_remote_panel_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "1A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/remote_annunciator_panel.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Repeater Panel",
+            "category": "Control Equipment",
+            "types": [
+              {
+                "type": "LED/LCD Repeater Panel",
+                "description": "Repeats the main FACP status in different locations within a building.",
+                "working_principle": "Mirrors alarms, faults, and system indicators from the main panel.",
+                "installation": "Installed at strategic locations to increase visibility of alarms.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "RP-200",
+                    "images": [
+                      "assets/images/honeywell_repeater_front.png",
+                      "assets/images/honeywell_repeater_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "1.2A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/repeater_panel.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Network Control Panel",
+            "category": "Control Equipment",
+            "types": [
+              {
+                "type": "IP-Connected NCP",
+                "description": "Manages multiple FACP systems over a network for large facilities.",
+                "working_principle": "Connects to multiple panels via IP network and centralizes control.",
+                "installation": "Installed in central control rooms or data centers.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "NCP-5000",
+                    "images": [
+                      "assets/images/siemens_ncp_front.png",
+                      "assets/images/siemens_ncp_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "120-240V AC",
+                      "current": "3A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/network_control_panel.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "name": "Power Supply Unit (PSU)",
+            "category": "Control Equipment",
+            "types": [
+              {
+                "type": "Fire Alarm PSU",
+                "description": "Provides regulated power to fire alarm panels and devices.",
+                "working_principle": "Converts AC mains to DC for panels and ensures battery charging.",
+                "installation": "Installed near FACP with proper ventilation.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "PSU-24V",
+                    "images": [
+                      "assets/images/notifier_psu_front.png",
+                      "assets/images/notifier_psu_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current_capacity": "5A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/power_supply_unit.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6",
+            "name": "Battery Backup",
+            "category": "Control Equipment",
+            "types": [
+              {
+                "type": "Lead-Acid Battery",
+                "description": "Provides emergency backup power to FACP during mains failure.",
+                "working_principle": "Stores electrical energy to maintain panel operation during power outage.",
+                "installation": "Installed near FACP with ventilation and secure housing.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "BAT-12V7Ah",
+                    "images": [
+                      "assets/images/honeywell_battery_front.png",
+                      "assets/images/honeywell_battery_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "12V DC",
+                      "capacity": "7Ah",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/battery_backup.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "detectionDevices": [
+
+          {
+            "id": "1",
+            "name": "Smoke Detector",
+            "category": "Detection Devices",
+            "types": [
+              {
+                "type": "Photoelectric",
+                "description": "Detects smoke particles from slow-burning fires and thick smoke.",
+                "working_principle": "Uses light scattering to detect smoke.",
+                "installation": "Installed on ceilings away from walls.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "HSD-PH1",
+                    "images": [
+                      "assets/images/honeywell_smoke_detector_front.png",
+                      "assets/images/honeywell_smoke_detector_side.png",
+                      "assets/images/honeywell_smoke_detector_back.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "45mA",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  },
+                  {
+                    "name": "Siemens",
+                    "model": "OP720",
+                    "images": [
+                      "assets/images/siemens_smoke_detector_front.png",
+                      "assets/images/siemens_smoke_detector_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "40mA",
+                      "operating_temperature": "-5 to 45 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/smoke_detector_photoelectric.mp4"
+                ]
+              },
+              {
+                "type": "Ionization",
+                "description": "Detects smoke from fast-burning fires and flames.",
+                "working_principle": "Uses ionization chamber to detect smoke particles.",
+                "installation": "Installed on ceilings; avoid kitchens and dusty areas.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Bosch",
+                    "model": "FAP-425",
+                    "images": [
+                      "assets/images/bosch_ionization_front.png",
+                      "assets/images/bosch_ionization_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "-10 to 55 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/smoke_detector_ionization.mp4"
+                ]
+              },
+              {
+                "type": "Combination",
+                "description": "Combines Photoelectric and Ionization sensors for maximum detection.",
+                "working_principle": "Two detection methods in one unit.",
+                "installation": "Installed on ceilings in critical areas.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "CN-Combo1",
+                    "images": [
+                      "assets/images/notifier_combo_front.png",
+                      "assets/images/notifier_combo_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "48mA",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/smoke_detector_combination.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Heat Detector",
+            "category": "Detection Devices",
+            "types": [
+              {
+                "type": "Fixed Temperature",
+                "description": "Detects fire when the temperature exceeds a preset limit.",
+                "working_principle": "Triggers alarm when ambient temperature reaches threshold.",
+                "installation": "Installed in kitchens, boiler rooms, garages; away from direct sunlight.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Bosch",
+                    "model": "FCH-T320",
+                    "images": [
+                      "assets/images/bosch_heat_fixed_front.png",
+                      "assets/images/bosch_heat_fixed_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "0 to 80 C"
+                    }
+                  },
+                  {
+                    "name": "Honeywell",
+                    "model": "HFD-FT100",
+                    "images": [
+                      "assets/images/honeywell_heat_fixed_front.png",
+                      "assets/images/honeywell_heat_fixed_back.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "45mA",
+                      "operating_temperature": "0 to 75 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/heat_detector_fixed.mp4"
+                ]
+              },
+              {
+                "type": "Rate-of-Rise",
+                "description": "Detects rapid increase in temperature, regardless of absolute value.",
+                "working_principle": "Triggers alarm when temperature rises faster than a set rate.",
+                "installation": "Ideal for areas where temperature fluctuates; away from heaters.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "RTH-500",
+                    "images": [
+                      "assets/images/siemens_heat_ror_front.png",
+                      "assets/images/siemens_heat_ror_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "40mA",
+                      "operating_temperature": "-10 to 60 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/heat_detector_rate_of_rise.mp4"
+                ]
+              },
+              {
+                "type": "Combination (Fixed + Rate-of-Rise)",
+                "description": "Combines Fixed Temperature and Rate-of-Rise detection for enhanced safety.",
+                "working_principle": "Detects either high temperature or rapid temperature increase.",
+                "installation": "Installed in critical areas with variable temperatures.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "CN-HeatCombo1",
+                    "images": [
+                      "assets/images/notifier_heat_combo_front.png",
+                      "assets/images/notifier_heat_combo_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "48mA",
+                      "operating_temperature": "0 to 80 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/heat_detector_combination.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Flame Detector",
+            "category": "Detection Devices",
+            "types": [
+              {
+                "type": "UV Flame Detector",
+                "description": "Detects flames using ultraviolet (UV) radiation.",
+                "working_principle": "Senses UV light emitted by flames.",
+                "installation": "Installed where open flames may occur; avoid direct sunlight.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "HFD-UV100",
+                    "images": [
+                      "assets/images/honeywell_flame_uv_front.png",
+                      "assets/images/honeywell_flame_uv_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "-20 to 60 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/flame_detector_uv.mp4"
+                ]
+              },
+              {
+                "type": "IR Flame Detector",
+                "description": "Detects flames using infrared (IR) radiation.",
+                "working_principle": "Senses IR radiation emitted by hot gases and flames.",
+                "installation": "Installed in areas prone to hydrocarbon fires; avoid reflective surfaces.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "IRF-500",
+                    "images": [
+                      "assets/images/siemens_flame_ir_front.png",
+                      "assets/images/siemens_flame_ir_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "45mA",
+                      "operating_temperature": "-10 to 55 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/flame_detector_ir.mp4"
+                ]
+              },
+              {
+                "type": "UV/IR Combination Flame Detector",
+                "description": "Combines UV and IR sensors for maximum flame detection.",
+                "working_principle": "Detects both UV and IR radiation to reduce false alarms.",
+                "installation": "Installed in high-risk industrial areas with potential flames.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "CN-FlameCombo1",
+                    "images": [
+                      "assets/images/notifier_flame_combo_front.png",
+                      "assets/images/notifier_flame_combo_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "48mA",
+                      "operating_temperature": "-10 to 60 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/flame_detector_combination.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Gas Detector",
+            "category": "Detection Devices",
+            "types": [
+              {
+                "type": "Electrochemical Gas Detector",
+                "description": "Detects toxic gases like CO, H2S using electrochemical sensors.",
+                "working_principle": "Chemical reaction generates electrical current proportional to gas concentration.",
+                "installation": "Installed near breathing zones, away from walls and corners.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "HGD-EC100",
+                    "images": [
+                      "assets/images/honeywell_gas_ec_front.png",
+                      "assets/images/honeywell_gas_ec_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "40mA",
+                      "operating_temperature": "-20 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/gas_detector_electrochemical.mp4"
+                ]
+              },
+              {
+                "type": "Infrared (IR) Gas Detector",
+                "description": "Detects flammable gases like methane or propane using IR absorption.",
+                "working_principle": "Measures absorption of IR light by gas molecules.",
+                "installation": "Installed at potential leak points or ceiling for lighter-than-air gases.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "IRG-500",
+                    "images": [
+                      "assets/images/siemens_gas_ir_front.png",
+                      "assets/images/siemens_gas_ir_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "-10 to 60 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/gas_detector_ir.mp4"
+                ]
+              },
+              {
+                "type": "Catalytic Combustion Gas Detector",
+                "description": "Detects flammable gases by oxidizing them on a catalytic sensor.",
+                "working_principle": "Combustion reaction increases sensor temperature, generating a measurable signal.",
+                "installation": "Installed near potential gas leak sources, in well-ventilated areas.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "CN-GasCat1",
+                    "images": [
+                      "assets/images/notifier_gas_cat_front.png",
+                      "assets/images/notifier_gas_cat_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "48mA",
+                      "operating_temperature": "-10 to 55 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/gas_detector_catalytic.mp4"
+                ]
+              }
+            ]
+          }
+
+        ],
+        "manualCallPoints": [
+          {
+            "id": "1",
+            "name": "Manual Call Point (MCP)",
+            "category": "Manual Initiating Devices",
+            "types": [
+              {
+                "type": "Single-Action",
+                "description": "Activates the fire alarm by pressing once; simple and fast to use.",
+                "working_principle": "Mechanical switch triggers the fire alarm panel immediately.",
+                "installation": "Installed at exit routes and corridors at 1.4m height from the floor.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "MCP-SA100",
+                    "images": [
+                      "assets/images/honeywell_mcp_sa_front.png",
+                      "assets/images/honeywell_mcp_sa_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "30mA",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/manual_callpoint_single.mp4"
+                ]
+              },
+              {
+                "type": "Double-Action",
+                "description": "Requires lifting cover then pressing to activate the alarm, preventing false activation.",
+                "working_principle": "Mechanical switch with cover mechanism triggers alarm panel.",
+                "installation": "Installed at strategic points in public areas for added safety.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "MCP-DA200",
+                    "images": [
+                      "assets/images/siemens_mcp_da_front.png",
+                      "assets/images/siemens_mcp_da_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "35mA",
+                      "operating_temperature": "-10 to 55 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/manual_callpoint_double.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Break Glass Unit",
+            "category": "Manual Initiating Devices",
+            "types": [
+              {
+                "type": "Standard Break Glass",
+                "description": "Activates alarm by breaking the glass; commonly used in older buildings.",
+                "working_principle": "Glass break closes a mechanical circuit to trigger the alarm.",
+                "installation": "Installed at exit routes, corridors, with protective glass cover.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "CN-BG100",
+                    "images": [
+                      "assets/images/notifier_bg_front.png",
+                      "assets/images/notifier_bg_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "32mA",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/break_glass_unit.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Pull Station",
+            "category": "Manual Initiating Devices",
+            "types": [
+              {
+                "type": "Single-Action Pull Station",
+                "description": "Pull lever down once to activate the fire alarm; fast and simple.",
+                "working_principle": "Mechanical lever closes circuit to trigger fire alarm panel.",
+                "installation": "Installed near exits and stairwells at 1.4m height.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "PS-SA101",
+                    "images": [
+                      "assets/images/honeywell_pull_front.png",
+                      "assets/images/honeywell_pull_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "30mA",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/pull_station_single.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "notificationDevices": [
+          {
+            "id": "1",
+            "name": "Fire Alarm Bell",
+            "category": "Notification Devices",
+            "types": [
+              {
+                "type": "Mechanical Bell",
+                "description": "Traditional bell produces loud ring to alert occupants.",
+                "working_principle": "Electromagnet strikes bell creating audible alert.",
+                "installation": "Installed in central corridors for maximum coverage.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "MB-500",
+                    "images": [
+                      "assets/images/siemens_bell_front.png",
+                      "assets/images/siemens_bell_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "60mA",
+                      "sound_output": "95dB",
+                      "operating_temperature": "-10 to 55 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/mechanical_bell.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Electronic Sounder",
+            "category": "Notification Devices",
+            "types": [
+              {
+                "type": "Electronic Piezo Sounder",
+                "description": "Produces loud, adjustable frequency sound for fire alarm alerts.",
+                "working_principle": "Electronic oscillator drives piezo speaker to generate sound.",
+                "installation": "Installed in hallways, corridors, and rooms with high occupancy.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "ES-100",
+                    "images": [
+                      "assets/images/honeywell_sounder_front.png",
+                      "assets/images/honeywell_sounder_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "sound_output": "90dB",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/electronic_sounder.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Siren",
+            "category": "Notification Devices",
+            "types": [
+              {
+                "type": "High-Output Siren",
+                "description": "Loud siren to alert large buildings or industrial areas.",
+                "working_principle": "Electromechanical or electronic circuit generates piercing sound.",
+                "installation": "Installed in industrial zones, rooftops, or large halls.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "SRN-300",
+                    "images": [
+                      "assets/images/notifier_siren_front.png",
+                      "assets/images/notifier_siren_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "75mA",
+                      "sound_output": "100dB",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/siren.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Horn",
+            "category": "Notification Devices",
+            "types": [
+              {
+                "type": "Electronic Horn",
+                "description": "Produces loud audible sound to alert occupants of fire.",
+                "working_principle": "Electronic oscillator drives a piezo speaker to produce high decibel sound.",
+                "installation": "Installed in corridors, rooms, and hallways for maximum coverage.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "FH-EL100",
+                    "images": [
+                      "assets/images/honeywell_horn_front.png",
+                      "assets/images/honeywell_horn_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "sound_output": "90dB",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_alarm_horn.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "name": "Horn-Strobe",
+            "category": "Notification Devices",
+            "types": [
+              {
+                "type": "Electronic Horn + LED Strobe",
+                "description": "Combines audible horn and visual strobe for alerting in noisy areas.",
+                "working_principle": "Horn produces sound; LED strobe flashes simultaneously.",
+                "installation": "Installed in hallways, industrial zones, or areas with high ambient noise.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "HS-Combo500",
+                    "images": [
+                      "assets/images/siemens_horn_strobe_front.png",
+                      "assets/images/siemens_horn_strobe_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "60mA",
+                      "sound_output": "90dB",
+                      "flash_rate": "1Hz",
+                      "operating_temperature": "-10 to 55 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/horn_strobe.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6",
+            "name": "Strobe Light",
+            "category": "Notification Devices",
+            "types": [
+              {
+                "type": "LED Strobe",
+                "description": "Visual alert using high-intensity LED flashes.",
+                "working_principle": "Electronic circuit flashes LED at a set frequency to alert visually.",
+                "installation": "Installed in corridors, rooms, and areas with high noise levels.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "LED-STR100",
+                    "images": [
+                      "assets/images/notifier_strobe_front.png",
+                      "assets/images/notifier_strobe_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "35mA",
+                      "flash_rate": "1Hz",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/strobe_light.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "7",
+            "name": "Voice Evacuation Speaker",
+            "category": "Notification Devices",
+            "types": [
+              {
+                "type": "Addressable Voice Speaker",
+                "description": "Provides voice instructions during fire emergencies.",
+                "working_principle": "Receives messages from fire alarm panel and outputs voice audio.",
+                "installation": "Installed in corridors, rooms, stairwells, and public areas.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "VES-100",
+                    "images": [
+                      "assets/images/honeywell_voice_speaker_front.png",
+                      "assets/images/honeywell_voice_speaker_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "sound_output": "95dB",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/voice_evacuation_speaker.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "interfaceModules": [
+          {
+            "id": "1",
+            "name": "Input Module",
+            "category": "Interface Modules",
+            "types": [
+              {
+                "type": "Standard Input Module",
+                "description": "Receives signals from external devices and forwards them to the fire alarm control panel.",
+                "working_principle": "Monitors contact closures or voltage changes from connected devices.",
+                "installation": "Installed near the devices it monitors, in secure enclosures.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "IM-100",
+                    "images": [
+                      "assets/images/honeywell_input_module_front.png",
+                      "assets/images/honeywell_input_module_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "0 to 50 C",
+                      "connections": "Supervised dry contacts"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/input_module.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Output Module",
+            "category": "Interface Modules",
+            "types": [
+              {
+                "type": "Relay Output Module",
+                "description": "Controls external devices such as fans, doors, or alarms based on fire alarm events.",
+                "working_principle": "Activates relays when a condition is triggered by the control panel.",
+                "installation": "Installed near devices it controls, in accessible enclosures.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "OM-200",
+                    "images": [
+                      "assets/images/siemens_output_module_front.png",
+                      "assets/images/siemens_output_module_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "100mA",
+                      "operating_temperature": "-10 to 50 C",
+                      "relay_rating": "2A, 30V DC"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/output_module.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Monitor Module",
+            "category": "Interface Modules",
+            "types": [
+              {
+                "type": "Supervised Monitor Module",
+                "description": "Monitors the status of external devices and reports faults or alarms to the control panel.",
+                "working_principle": "Continuously checks line integrity and device status.",
+                "installation": "Installed near devices to be monitored.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "MM-300",
+                    "images": [
+                      "assets/images/notifier_monitor_module_front.png",
+                      "assets/images/notifier_monitor_module_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "40mA",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/monitor_module.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Control Module",
+            "category": "Interface Modules",
+            "types": [
+              {
+                "type": "Device Control Module",
+                "description": "Allows the fire alarm control panel to remotely control external devices.",
+                "working_principle": "Receives commands from the panel and switches connected devices accordingly.",
+                "installation": "Installed in secure enclosures near controlled devices.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "CM-400",
+                    "images": [
+                      "assets/images/honeywell_control_module_front.png",
+                      "assets/images/honeywell_control_module_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "60mA",
+                      "operating_temperature": "0 to 50 C",
+                      "output_type": "Form C relay"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/control_module.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "name": "Relay Module",
+            "category": "Interface Modules",
+            "types": [
+              {
+                "type": "Single Relay Module",
+                "description": "Provides isolated relay outputs for triggering external systems.",
+                "working_principle": "Relay closes/open contacts when activated by the fire alarm panel.",
+                "installation": "Installed close to devices it controls in secure enclosures.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "RM-500",
+                    "images": [
+                      "assets/images/siemens_relay_module_front.png",
+                      "assets/images/siemens_relay_module_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "0 to 50 C",
+                      "relay_rating": "2A, 30V DC"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/relay_module.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6",
+            "name": "Addressable Interface Module",
+            "category": "Interface Modules",
+            "types": [
+              {
+                "type": "Addressable Module",
+                "description": "Connects addressable devices to the control panel for communication and monitoring.",
+                "working_principle": "Assigns unique addresses to devices for individual monitoring and control.",
+                "installation": "Installed in zones with addressable devices, near the panel or distribution points.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "AIM-600",
+                    "images": [
+                      "assets/images/notifier_addressable_front.png",
+                      "assets/images/notifier_addressable_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "55mA",
+                      "operating_temperature": "-10 to 50 C",
+                      "addressable_support": "Up to 127 devices"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/addressable_interface_module.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "communicationDevices": [
+          {
+            "id": "1",
+            "name": "Fire Alarm Transmitter",
+            "category": "Communication Devices",
+            "types": [
+              {
+                "type": "Standard Transmitter",
+                "description": "Transmits fire alarm signals to a central monitoring station or remote site.",
+                "working_principle": "Sends digital or analog signals over dedicated communication lines.",
+                "installation": "Installed near the control panel or communication hub.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "FAT-100",
+                    "images": [
+                      "assets/images/honeywell_transmitter_front.png",
+                      "assets/images/honeywell_transmitter_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "60mA",
+                      "operating_temperature": "0 to 50 C",
+                      "communication_type": "Digital/Analog"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_alarm_transmitter.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "GSM Communicator",
+            "category": "Communication Devices",
+            "types": [
+              {
+                "type": "GSM Cellular Module",
+                "description": "Sends fire alarm notifications via cellular network (SMS or data) to monitoring stations or users.",
+                "working_principle": "Uses GSM network to relay alarm events.",
+                "installation": "Installed near control panel with cellular signal coverage.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "GSM-500",
+                    "images": [
+                      "assets/images/siemens_gsm_front.png",
+                      "assets/images/siemens_gsm_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "45mA",
+                      "operating_temperature": "-10 to 50 C",
+                      "network_support": "GSM 900/1800 MHz"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/gsm_communicator.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "IP Communicator",
+            "category": "Communication Devices",
+            "types": [
+              {
+                "type": "Ethernet/IP Module",
+                "description": "Sends fire alarm notifications over TCP/IP networks to monitoring systems or software.",
+                "working_principle": "Encodes alarm data and transmits via Ethernet.",
+                "installation": "Installed near control panel with network connection.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "IP-600",
+                    "images": [
+                      "assets/images/notifier_ip_front.png",
+                      "assets/images/notifier_ip_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "0 to 50 C",
+                      "network_type": "Ethernet TCP/IP"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/ip_communicator.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Dialer Module",
+            "category": "Communication Devices",
+            "types": [
+              {
+                "type": "Telephone Dialer",
+                "description": "Automatically calls pre-programmed phone numbers to report fire alarm events.",
+                "working_principle": "Connects to telephone line and sends voice/data signals when alarm triggers.",
+                "installation": "Installed near the control panel with telephone line access.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "DM-101",
+                    "images": [
+                      "assets/images/honeywell_dialer_front.png",
+                      "assets/images/honeywell_dialer_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "40mA",
+                      "operating_temperature": "0 to 50 C",
+                      "line_type": "Analog PSTN"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/dialer_module.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "auxiliaryFireAlarmDevices": [
+          {
+            "id": "1",
+            "name": "Isolator Module",
+            "category": "Auxiliary Fire Alarm Devices",
+            "types": [
+              {
+                "type": "Standard Isolator Module",
+                "description": "Protects sections of the fire alarm loop by isolating faults to prevent total system failure.",
+                "working_principle": "Automatically disconnects faulty section while maintaining operation of the rest of the loop.",
+                "installation": "Installed on the loop wiring at strategic points to isolate sections.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "IM-ISO100",
+                    "images": [
+                      "assets/images/honeywell_isolator_front.png",
+                      "assets/images/honeywell_isolator_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "0 to 50 C",
+                      "loop_support": "Addressable/Conventional"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/isolator_module.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Short Circuit Isolator",
+            "category": "Auxiliary Fire Alarm Devices",
+            "types": [
+              {
+                "type": "Loop Short Circuit Isolator",
+                "description": "Protects the fire alarm loop by isolating short circuit faults.",
+                "working_principle": "Automatically disconnects the shorted section while keeping other sections active.",
+                "installation": "Installed along loop wiring where short circuit risk is high.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "SCI-200",
+                    "images": [
+                      "assets/images/siemens_sci_front.png",
+                      "assets/images/siemens_sci_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "45mA",
+                      "operating_temperature": "-10 to 50 C",
+                      "loop_support": "Addressable"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/short_circuit_isolator.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Addressable Loop Module",
+            "category": "Auxiliary Fire Alarm Devices",
+            "types": [
+              {
+                "type": "Addressable Loop Interface",
+                "description": "Allows connection of devices to the addressable fire alarm loop.",
+                "working_principle": "Assigns unique addresses to devices for monitoring and control.",
+                "installation": "Installed along the addressable loop near device groups.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "ALM-300",
+                    "images": [
+                      "assets/images/notifier_addressable_loop_front.png",
+                      "assets/images/notifier_addressable_loop_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "operating_temperature": "-10 to 50 C",
+                      "addressable_support": "Up to 127 devices"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/addressable_loop_module.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Zone Monitor Module",
+            "category": "Auxiliary Fire Alarm Devices",
+            "types": [
+              {
+                "type": "Zone Monitor",
+                "description": "Monitors individual zones for faults or alarms and reports to the fire alarm panel.",
+                "working_principle": "Supervises circuits and provides status signals to the panel.",
+                "installation": "Installed in control panel or near monitored zones.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "ZM-400",
+                    "images": [
+                      "assets/images/honeywell_zone_monitor_front.png",
+                      "assets/images/honeywell_zone_monitor_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "45mA",
+                      "operating_temperature": "0 to 50 C",
+                      "zone_support": "Multiple zones per module"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/zone_monitor_module.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "wiringInstallationComponents": [
+          {
+            "id": "1",
+            "name": "Fire Rated Cable",
+            "category": "Wiring & Installation Components",
+            "types": [
+              {
+                "type": "FR-LS Cable",
+                "description": "Fire-resistant cable that maintains circuit integrity during a fire.",
+                "working_principle": "Special insulation prevents short circuits and maintains signal transmission under high temperature.",
+                "installation": "Used for connecting detectors, control panels, and notification devices; routed through conduits or trays.",
+                "nfpa_reference": "NFPA 70, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "FRC-500",
+                    "images": [
+                      "assets/images/siemens_fire_cable_front.png",
+                      "assets/images/siemens_fire_cable_side.png"
+                    ],
+                    "specifications": {
+                      "voltage_rating": "300V",
+                      "temperature_rating": "0 to 90 C",
+                      "fire_resistance": "Up to 2 hours"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_rated_cable.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Junction Box",
+            "category": "Wiring & Installation Components",
+            "types": [
+              {
+                "type": "Standard Junction Box",
+                "description": "Protects wire connections and provides access for maintenance.",
+                "working_principle": "Encloses and organizes wire splices and terminals.",
+                "installation": "Installed at wiring junction points along loops; mounted on walls or ceilings.",
+                "nfpa_reference": "NFPA 70",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "JB-100",
+                    "images": [
+                      "assets/images/honeywell_junction_box_front.png",
+                      "assets/images/honeywell_junction_box_side.png"
+                    ],
+                    "specifications": {
+                      "material": "Steel / Fireproof plastic",
+                      "dimensions": "150x150x75 mm",
+                      "mounting": "Surface or flush"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/junction_box.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Conduit Pipes",
+            "category": "Wiring & Installation Components",
+            "types": [
+              {
+                "type": "Metal/Plastic Conduit",
+                "description": "Protects fire alarm wiring and provides pathway for cables.",
+                "working_principle": "Encloses cables to prevent physical damage and fire propagation.",
+                "installation": "Installed along walls or ceilings; connectors at junctions.",
+                "nfpa_reference": "NFPA 70",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "CP-50",
+                    "images": [
+                      "assets/images/notifier_conduit_front.png",
+                      "assets/images/notifier_conduit_side.png"
+                    ],
+                    "specifications": {
+                      "material": "PVC / Steel",
+                      "diameter": "25-50 mm",
+                      "fire_rating": "Up to 2 hours"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/conduit_pipes.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Cable Tray",
+            "category": "Wiring & Installation Components",
+            "types": [
+              {
+                "type": "Metal Cable Tray",
+                "description": "Supports and organizes multiple fire alarm cables along a path.",
+                "working_principle": "Maintains proper cable routing and prevents stress or entanglement.",
+                "installation": "Mounted on ceilings or walls; used in commercial/industrial buildings.",
+                "nfpa_reference": "NFPA 70",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "CT-200",
+                    "images": [
+                      "assets/images/siemens_cable_tray_front.png",
+                      "assets/images/siemens_cable_tray_side.png"
+                    ],
+                    "specifications": {
+                      "material": "Steel / Aluminum",
+                      "load_capacity": "50kg/m",
+                      "dimensions": "100x50 mm"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/cable_tray.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "name": "End of Line Resistor (EOL)",
+            "category": "Wiring & Installation Components",
+            "types": [
+              {
+                "type": "EOL Resistor Module",
+                "description": "Terminates the end of a circuit for supervision by the fire alarm panel.",
+                "working_principle": "Maintains a constant resistance for panel to detect open/short circuits.",
+                "installation": "Connected at the last device in the loop or zone wiring.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "EOLR-10k",
+                    "images": [
+                      "assets/images/honeywell_eol_front.png",
+                      "assets/images/honeywell_eol_side.png"
+                    ],
+                    "specifications": {
+                      "resistance": "10k Ohm",
+                      "power_rating": "0.25W",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/end_of_line_resistor.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "specialDetectionSystems": [
+          {
+            "id": "1",
+            "name": "Aspirating Smoke Detection System",
+            "category": "Special Detection Systems",
+            "types": [
+              {
+                "type": "Aspirating Smoke Detector",
+                "description": "Draws air through a network of pipes to detect smoke at very early stages.",
+                "working_principle": "Air samples are analyzed by a central detection unit for smoke particles.",
+                "installation": "Pipe network installed across the protected area; central detection unit in control room.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "Vulcan-ASD100",
+                    "images": [
+                      "assets/images/honeywell_aspirating_front.png",
+                      "assets/images/honeywell_aspirating_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "200mA",
+                      "coverage_area": "Up to 2000 m²",
+                      "sensitivity": "0.005%/ft obs"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/aspirating_smoke_detection.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Linear Beam Smoke Detection",
+            "category": "Special Detection Systems",
+            "types": [
+              {
+                "type": "Projected Beam Detector",
+                "description": "Uses a light beam across large open spaces to detect smoke.",
+                "working_principle": "Smoke obstructs the beam, triggering an alarm.",
+                "installation": "Ceiling-mounted; transmitter and receiver aligned across open area.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "LBD-500",
+                    "images": [
+                      "assets/images/siemens_linear_beam_front.png",
+                      "assets/images/siemens_linear_beam_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "60mA",
+                      "coverage_range": "Up to 100 m",
+                      "sensitivity": "0.01%/ft obs"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/linear_beam_smoke.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Duct Smoke Detector",
+            "category": "Special Detection Systems",
+            "types": [
+              {
+                "type": "Duct Detector",
+                "description": "Detects smoke in HVAC ducts to prevent smoke spread.",
+                "working_principle": "Airflow through detector chamber is monitored for smoke particles.",
+                "installation": "Installed inside ductwork with sampling tube or probe.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "DSD-200",
+                    "images": [
+                      "assets/images/notifier_duct_front.png",
+                      "assets/images/notifier_duct_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "airflow_range": "0.5–20 m/s",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/duct_smoke_detector.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Air Sampling Detection System",
+            "category": "Special Detection Systems",
+            "types": [
+              {
+                "type": "Active Air Sampling System",
+                "description": "Continuously samples air to detect smoke particles at early stages.",
+                "working_principle": "Air is drawn through a detection unit with laser or photoelectric sensors.",
+                "installation": "Pipe network installed in protected spaces; detection unit centrally located.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "ASD-400",
+                    "images": [
+                      "assets/images/honeywell_air_sampling_front.png",
+                      "assets/images/honeywell_air_sampling_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "250mA",
+                      "coverage_area": "Up to 1500 m²",
+                      "sensitivity": "0.002%/ft obs"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/air_sampling_detection.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "integrationDevices": [
+          {
+            "id": "1",
+            "name": "Elevator Control Interface",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Elevator Interface Module",
+                "description": "Integrates the fire alarm system with elevator control to ensure safe operation during fire.",
+                "working_principle": "Sends signals to recall elevators to a designated floor and disables operation if fire is detected.",
+                "installation": "Mounted near elevator control panel or fire alarm control panel.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "ECI-100",
+                    "images": [
+                      "assets/images/honeywell_elevator_front.png",
+                      "assets/images/honeywell_elevator_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "interface_protocol": "Dry Contact / Relay"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/elevator_control_interface.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "HVAC Shutdown Interface",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "HVAC Interface Module",
+                "description": "Integrates fire alarm with HVAC system to stop smoke propagation.",
+                "working_principle": "Signals HVAC system to shut down fans and dampers when fire is detected.",
+                "installation": "Installed near HVAC control panel or FA system panel.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "HVAC-500",
+                    "images": [
+                      "assets/images/siemens_hvac_front.png",
+                      "assets/images/siemens_hvac_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "60mA",
+                      "interface_type": "Dry Contact / Relay"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/hvac_shutdown_interface.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Fire Door Release Module",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Door Release Interface",
+                "description": "Controls automatic release of fire doors in case of emergency.",
+                "working_principle": "Receives signal from FA panel to unlock fire doors or hold-open devices.",
+                "installation": "Mounted near fire doors or FA panel; connected to door mechanism.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "FDR-100",
+                    "images": [
+                      "assets/images/notifier_fire_door_front.png",
+                      "assets/images/notifier_fire_door_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "45mA",
+                      "contact_type": "NO/NC Relay"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_door_release.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Fire Pump Interface",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Fire Pump Control Module",
+                "description": "Connects fire alarm system with fire pump to ensure water supply activation.",
+                "working_principle": "Sends start/stop signal to pump controller upon alarm or test.",
+                "installation": "Mounted near pump controller or FA control panel.",
+                "nfpa_reference": "NFPA 20, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "FPI-200",
+                    "images": [
+                      "assets/images/honeywell_fire_pump_front.png",
+                      "assets/images/honeywell_fire_pump_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "70mA",
+                      "interface_type": "Dry Contact / Relay"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_pump_interface.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "name": "Sprinkler Flow Switch Interface",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Flow Switch Module",
+                "description": "Monitors sprinkler water flow and integrates with fire alarm system.",
+                "working_principle": "Detects water movement in sprinkler piping and signals FA panel.",
+                "installation": "Installed on sprinkler riser or branch line near control valve.",
+                "nfpa_reference": "NFPA 13, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "SFS-300",
+                    "images": [
+                      "assets/images/siemens_sprinkler_flow_front.png",
+                      "assets/images/siemens_sprinkler_flow_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "contact_type": "SPDT Relay"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/sprinkler_flow_switch.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "monitoringDevices": [
+          {
+            "id": "1",
+            "name": "Water Flow Switch",
+            "category": "Monitoring Devices",
+            "types": [
+              {
+                "type": "Standard Water Flow Switch",
+                "description": "Detects water movement in sprinkler piping to monitor activation.",
+                "working_principle": "Mechanical paddle or sensor detects flow and signals the fire alarm panel.",
+                "installation": "Installed on sprinkler riser or main branch line near control valve.",
+                "nfpa_reference": "NFPA 13, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "WFS-100",
+                    "images": [
+                      "assets/images/honeywell_waterflow_front.png",
+                      "assets/images/honeywell_waterflow_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "40mA",
+                      "contact_type": "SPST or SPDT",
+                      "operating_pressure": "0.5–16 bar"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/water_flow_switch.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Pressure Switch",
+            "category": "Monitoring Devices",
+            "types": [
+              {
+                "type": "Pressure Monitoring Switch",
+                "description": "Monitors pressure in sprinkler or fire suppression systems.",
+                "working_principle": "Switch activates when system pressure falls below or rises above set limits.",
+                "installation": "Mounted on piping or pump discharge; near FA control panel.",
+                "nfpa_reference": "NFPA 13, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "PS-200",
+                    "images": [
+                      "assets/images/siemens_pressure_front.png",
+                      "assets/images/siemens_pressure_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "35mA",
+                      "pressure_range": "0–16 bar",
+                      "contact_type": "SPDT"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/pressure_switch.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Tamper Switch",
+            "category": "Monitoring Devices",
+            "types": [
+              {
+                "type": "Tamper Detection Switch",
+                "description": "Detects unauthorized access or tampering with fire system valves.",
+                "working_principle": "Mechanical switch triggers alarm when valve cover or handle is moved.",
+                "installation": "Mounted on control valves, sprinkler risers, or cabinets.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "TS-101",
+                    "images": [
+                      "assets/images/notifier_tamper_front.png",
+                      "assets/images/notifier_tamper_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "30mA",
+                      "contact_type": "SPST"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/tamper_switch.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Supervisory Switch",
+            "category": "Monitoring Devices",
+            "types": [
+              {
+                "type": "Supervisory Detection Switch",
+                "description": "Monitors status of supervisory devices like valve positions or system integrity.",
+                "working_principle": "Triggers supervisory alarm when abnormal condition is detected.",
+                "installation": "Installed on valves, panels, or system components as required.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "SS-150",
+                    "images": [
+                      "assets/images/honeywell_supervisory_front.png",
+                      "assets/images/honeywell_supervisory_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "35mA",
+                      "contact_type": "SPDT"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/supervisory_switch.mp4"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sectionId": "fire_fighting",
+      "sectionTitle": "Fire Fighting Systems",
+      "fire_fighting_system_types": [
+        {
+          "type": "Automatic Sprinkler System",
+          "images": [
+            "assets/images/fire_fighting/sprinkler_1.jpg",
+            "assets/images/fire_fighting/sprinkler_2.jpg"
+          ],
+          "principle": "A network of pipes filled with water connected to sprinkler heads that automatically discharge water when the temperature reaches a specific threshold.",
+          "characteristics": [
+            "Automatic fire detection and suppression",
+            "Uses water as the extinguishing agent",
+            "Activated by heat-sensitive sprinkler heads"
+          ],
+          "advantages": [
+            "Fast automatic response",
+            "Highly reliable",
+            "Widely used in buildings"
+          ],
+          "disadvantages": [
+            "Water damage possible",
+            "Not suitable for electrical equipment rooms"
+          ],
+          "applications": [
+            "Shopping malls",
+            "Hotels",
+            "Office buildings",
+            "Warehouses"
+          ]
+        },
+        {
+          "type": "Fire Hydrant System",
+          "images": [
+            "assets/images/fire_fighting/hydrant_1.jpg",
+            "assets/images/fire_fighting/hydrant_2.jpg"
+          ],
+          "principle": "A system that provides firefighters with a reliable water supply through hydrants, hoses, and valves to manually fight fires.",
+          "characteristics": [
+            "Manual firefighting system",
+            "Connected to a high-capacity water supply",
+            "Used by trained personnel or firefighters"
+          ],
+          "advantages": [
+            "Provides large water flow",
+            "Effective for large fires",
+            "Essential for large buildings"
+          ],
+          "disadvantages": [
+            "Requires manual operation",
+            "Needs trained personnel"
+          ],
+          "applications": [
+            "Industrial facilities",
+            "Commercial buildings",
+            "Airports",
+            "Large residential complexes"
+          ]
+        },
+        {
+          "type": "Foam Fire Fighting System",
+          "images": [
+            "assets/images/fire_fighting/foam_1.jpg",
+            "assets/images/fire_fighting/foam_2.jpg"
+          ],
+          "principle": "Uses foam solution to create a blanket over flammable liquids, preventing oxygen from reaching the fuel and suppressing the fire.",
+          "characteristics": [
+            "Uses foam concentrate mixed with water",
+            "Effective for flammable liquid fires",
+            "Forms a protective foam blanket"
+          ],
+          "advantages": [
+            "Highly effective for fuel fires",
+            "Prevents re-ignition",
+            "Covers large surfaces quickly"
+          ],
+          "disadvantages": [
+            "Requires foam concentrate storage",
+            "More complex system design"
+          ],
+          "applications": [
+            "Oil refineries",
+            "Fuel storage tanks",
+            "Aircraft hangars",
+            "Chemical plants"
+          ]
+        },
+        {
+          "type": "Gas Fire Suppression System",
+          "images": [
+            "assets/images/fire_fighting/gas_1.jpg",
+            "assets/images/fire_fighting/gas_2.jpg"
+          ],
+          "principle": "Uses clean agent gases to suppress fire by reducing oxygen concentration or interrupting the chemical reaction of combustion.",
+          "characteristics": [
+            "Leaves no residue after discharge",
+            "Safe for electronic equipment",
+            "Fast fire suppression"
+          ],
+          "advantages": [
+            "No water damage",
+            "Ideal for sensitive equipment",
+            "Clean suppression method"
+          ],
+          "disadvantages": [
+            "Higher system cost",
+            "Requires sealed rooms for effectiveness"
+          ],
+          "applications": [
+            "Data centers",
+            "Server rooms",
+            "Control rooms",
+            "Telecommunication facilities"
+          ]
+        },
+        {
+          "type": "Water Mist Fire Suppression System",
+          "images": [
+            "assets/images/fire_fighting/water_mist_1.jpg",
+            "assets/images/fire_fighting/water_mist_2.jpg"
+          ],
+          "principle": "Discharges very fine water droplets that absorb heat rapidly and reduce oxygen around the fire.",
+          "characteristics": [
+            "Uses very fine water droplets",
+            "Consumes less water than traditional sprinklers",
+            "Reduces heat and oxygen levels"
+          ],
+          "advantages": [
+            "Minimal water damage",
+            "Highly efficient cooling",
+            "Suitable for sensitive areas"
+          ],
+          "disadvantages": [
+            "Higher installation cost",
+            "Requires specialized equipment"
+          ],
+          "applications": [
+            "Museums",
+            "Ships",
+            "Power plants",
+            "Historic buildings"
+          ]
+        }
+      ],
+      "devices": {
+        "notificationDevices": [
+          {
+            "id": "1",
+            "name": "Fire Alarm Bell",
+            "category": "Alarm & Notification Devices",
+            "types": [
+              {
+                "type": "Standard Fire Alarm Bell",
+                "description": "Produces loud audible alarm to alert occupants of fire.",
+                "working_principle": "Mechanical or electronic bell triggered by fire alarm panel.",
+                "installation": "Installed at strategic locations throughout the building.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "FAB-100",
+                    "images": [
+                      "assets/images/honeywell_fire_bell_front.png",
+                      "assets/images/honeywell_fire_bell_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "50mA",
+                      "sound_level": "95 dB",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_alarm_bell.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Fire Alarm Siren",
+            "category": "Alarm & Notification Devices",
+            "types": [
+              {
+                "type": "Electronic Siren",
+                "description": "Produces continuous or pulsed loud sound to alert occupants.",
+                "working_principle": "Electronic sounder activated by fire alarm control panel.",
+                "installation": "Installed in corridors, halls, and high-occupancy areas.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "FAS-200",
+                    "images": [
+                      "assets/images/siemens_siren_front.png",
+                      "assets/images/siemens_siren_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "60mA",
+                      "sound_level": "100 dB",
+                      "operating_temperature": "-10 to 55 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_alarm_siren.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Strobe Lights / Visual Indicators",
+            "category": "Alarm & Notification Devices",
+            "types": [
+              {
+                "type": "LED Strobe Light",
+                "description": "Provides visual alert to occupants during fire alarm activation.",
+                "working_principle": "Flashing LED light triggered by fire alarm panel.",
+                "installation": "Installed in corridors, restrooms, and areas where audible alarms may not be heard.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "SL-100",
+                    "images": [
+                      "assets/images/notifier_strobe_front.png",
+                      "assets/images/notifier_strobe_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "40mA",
+                      "flash_rate": "1 Hz",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/strobe_light.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Voice Evacuation System",
+            "category": "Alarm & Notification Devices",
+            "types": [
+              {
+                "type": "Emergency Voice Communication",
+                "description": "Delivers pre-recorded or live voice messages for evacuation.",
+                "working_principle": "Activated by fire alarm panel to broadcast instructions via speakers.",
+                "installation": "Installed throughout building in halls, corridors, and large rooms.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "VES-500",
+                    "images": [
+                      "assets/images/honeywell_voice_system_front.png",
+                      "assets/images/honeywell_voice_system_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "100mA",
+                      "speaker_output": "10W",
+                      "operating_temperature": "-10 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/voice_evacuation_system.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "suppressionDevices": [
+          {
+            "id": "1",
+            "name": "Sprinkler Heads",
+            "category": "Suppression Devices",
+            "types": [
+              {
+                "type": "Standard Sprinkler",
+                "description": "Automatically sprays water to suppress fire when temperature exceeds threshold.",
+                "working_principle": "Thermal element triggers water flow through piping network.",
+                "installation": "Installed on ceilings covering designated hazard areas.",
+                "nfpa_reference": "NFPA 13",
+                "manufacturers": [
+                  {
+                    "name": "Tyco",
+                    "model": "TY-S100",
+                    "images": [
+                      "assets/images/tyco_sprinkler_front.png",
+                      "assets/images/tyco_sprinkler_side.png"
+                    ],
+                    "specifications": {
+                      "temperature_rating": "155°F / 68°C",
+                      "spray_pattern": "Standard",
+                      "operating_pressure": "7-175 psi"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/sprinkler_heads.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Fire Hose Reels",
+            "category": "Suppression Devices",
+            "types": [
+              {
+                "type": "Manual Fire Hose Reel",
+                "description": "Provides water for manual firefighting; connected to building water supply.",
+                "working_principle": "Open valve to release water through hose onto fire.",
+                "installation": "Installed in cabinets near exits and stairwells.",
+                "nfpa_reference": "NFPA 14",
+                "manufacturers": [
+                  {
+                    "name": "Victaulic",
+                    "model": "VHR-200",
+                    "images": [
+                      "assets/images/victaulic_hose_reel_front.png",
+                      "assets/images/victaulic_hose_reel_side.png"
+                    ],
+                    "specifications": {
+                      "hose_length": "30 m",
+                      "hose_diameter": "19 mm",
+                      "operating_pressure": "8 bar"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_hose_reels.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Fire Hydrants",
+            "category": "Suppression Devices",
+            "types": [
+              {
+                "type": "Outdoor Hydrant",
+                "description": "Provides external water source for firefighting operations.",
+                "working_principle": "Connect fire hoses to hydrant outlets to access water.",
+                "installation": "Installed outdoors at strategic locations accessible to fire services.",
+                "nfpa_reference": "NFPA 24",
+                "manufacturers": [
+                  {
+                    "name": "Mueller",
+                    "model": "FH-500",
+                    "images": [
+                      "assets/images/mueller_hydrant_front.png",
+                      "assets/images/mueller_hydrant_side.png"
+                    ],
+                    "specifications": {
+                      "pressure_rating": "150 psi",
+                      "flow_rate": "1000-1500 GPM"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_hydrants.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Fire Pumps",
+            "category": "Suppression Devices",
+            "types": [
+              {
+                "type": "Jockey / Main Pump",
+                "description": "Maintains system pressure and provides water to sprinklers and hydrants.",
+                "working_principle": "Automatically starts when pressure drops; powered electrically or by diesel.",
+                "installation": "Installed in pump rooms connected to water supply and fire protection system.",
+                "nfpa_reference": "NFPA 20",
+                "manufacturers": [
+                  {
+                    "name": "KSB",
+                    "model": "FP-300",
+                    "images": [
+                      "assets/images/ksb_fire_pump_front.png",
+                      "assets/images/ksb_fire_pump_side.png"
+                    ],
+                    "specifications": {
+                      "flow_rate": "500-2000 GPM",
+                      "pressure": "150 psi",
+                      "power": "Electric / Diesel"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_pumps.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "name": "Water Tanks",
+            "category": "Suppression Devices",
+            "types": [
+              {
+                "type": "Fire Water Storage Tank",
+                "description": "Stores water dedicated for fire suppression systems.",
+                "working_principle": "Provides constant water supply to fire pumps and sprinklers.",
+                "installation": "Installed aboveground or underground near pump rooms.",
+                "nfpa_reference": "NFPA 22",
+                "manufacturers": [
+                  {
+                    "name": "Aquastore",
+                    "model": "WT-10000",
+                    "images": [
+                      "assets/images/aquastore_tank_front.png",
+                      "assets/images/aquastore_tank_side.png"
+                    ],
+                    "specifications": {
+                      "capacity": "10,000 liters",
+                      "material": "Steel / FRP",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/water_tanks.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6",
+            "name": "Foam Systems",
+            "category": "Suppression Devices",
+            "types": [
+              {
+                "type": "Low Expansion Foam System",
+                "description": "Extinguishes flammable liquid fires using foam blanket.",
+                "working_principle": "Mixes foam concentrate with water and disperses over fire.",
+                "installation": "Installed in areas with high risk of flammable liquid fires.",
+                "nfpa_reference": "NFPA 11",
+                "manufacturers": [
+                  {
+                    "name": "Ansul",
+                    "model": "FS-100",
+                    "images": [
+                      "assets/images/ansul_foam_front.png",
+                      "assets/images/ansul_foam_side.png"
+                    ],
+                    "specifications": {
+                      "foam_type": "AFFF",
+                      "flow_rate": "100-500 L/min",
+                      "operating_pressure": "6-8 bar"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/foam_systems.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "7",
+            "name": "CO₂ Systems",
+            "category": "Suppression Devices",
+            "types": [
+              {
+                "type": "Carbon Dioxide Fire Suppression",
+                "description": "Extinguishes fire by displacing oxygen in the hazard area.",
+                "working_principle": "CO₂ released from cylinders to flood the protected area.",
+                "installation": "Installed in high-risk areas such as server rooms and electrical panels.",
+                "nfpa_reference": "NFPA 12",
+                "manufacturers": [
+                  {
+                    "name": "Kidde",
+                    "model": "CO2-500",
+                    "images": [
+                      "assets/images/kidde_co2_front.png",
+                      "assets/images/kidde_co2_side.png"
+                    ],
+                    "specifications": {
+                      "cylinder_size": "50 kg",
+                      "discharge_time": "60 sec",
+                      "operating_temperature": "-20 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/co2_systems.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "8",
+            "name": "Dry Chemical Powder Systems",
+            "category": "Suppression Devices",
+            "types": [
+              {
+                "type": "ABC Dry Chemical System",
+                "description": "Extinguishes Class A, B, and C fires using dry chemical powder.",
+                "working_principle": "Powder discharged under pressure to suppress fire.",
+                "installation": "Installed in areas with high fire risk such as industrial kitchens and chemical storage.",
+                "nfpa_reference": "NFPA 17",
+                "manufacturers": [
+                  {
+                    "name": "Amerex",
+                    "model": "DCP-200",
+                    "images": [
+                      "assets/images/amerex_dry_chemical_front.png",
+                      "assets/images/amerex_dry_chemical_side.png"
+                    ],
+                    "specifications": {
+                      "powder_type": "ABC",
+                      "capacity": "25 kg",
+                      "discharge_time": "20 sec"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/dry_chemical_systems.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "controlMonitoringPanels": [
+          {
+            "id": "1",
+            "name": "FFCP – Fire Fighting Control Panel",
+            "category": "Control & Monitoring Panels",
+            "types": [
+              {
+                "type": "Standard FFCP",
+                "description": "Central panel controlling all fire fighting equipment and monitoring system status.",
+                "working_principle": "Monitors pumps, sprinklers, foam/CO₂ systems, receives signals from detectors, and integrates with building systems.",
+                "installation": "Installed in a secure pump/control room with easy access for fire safety personnel.",
+                "features": [
+                  "Monitoring and operation of pumps (Jockey, Main, Diesel)",
+                  "Control of sprinklers, foam, and CO₂ systems",
+                  "Receiving signals from smoke, heat, and flow detectors",
+                  "Integration with building systems (Elevator, HVAC, Fire Doors)",
+                  "Display system status and alerts"
+                ],
+                "nfpa_reference": "NFPA 20, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "KSB",
+                    "model": "FFCP-1000",
+                    "images": [
+                      "assets/images/ksb_ffcp_front.png",
+                      "assets/images/ksb_ffcp_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "120-240V AC",
+                      "current": "3A",
+                      "operating_temperature": "0 to 50 C",
+                      "supported_systems": "Sprinklers, Foam, CO₂, Pumps"
+                    }
+                  },
+                  {
+                    "name": "Tyco",
+                    "model": "TY-FFCP-500",
+                    "images": [
+                      "assets/images/tyco_ffcp_front.png",
+                      "assets/images/tyco_ffcp_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "120-240V AC",
+                      "current": "2.5A",
+                      "operating_temperature": "0 to 50 C",
+                      "supported_systems": "Sprinklers, Foam, CO₂, Pumps"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/ffcp_panel.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "integrationDevices": [
+          {
+            "id": "1",
+            "name": "Elevator Control Interface",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Standard Elevator Interface",
+                "description": "Interfaces fire fighting system with building elevators to control recall and prevent use during fire.",
+                "working_principle": "Sends signals from fire panel to elevator control to initiate recall or lock functions.",
+                "installation": "Installed near elevator control panels or main FFCP.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "ECI-100",
+                    "images": [
+                      "assets/images/honeywell_elevator_interface_front.png",
+                      "assets/images/honeywell_elevator_interface_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "0.5A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/elevator_control_interface.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "HVAC Shutdown Interface",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Standard HVAC Interface",
+                "description": "Automatically shuts down HVAC systems to prevent smoke spread during fire.",
+                "working_principle": "Receives signals from FFCP and deactivates HVAC fans and dampers.",
+                "installation": "Installed near HVAC control panel or FFCP.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "HVAC-INTF-200",
+                    "images": [
+                      "assets/images/siemens_hvac_interface_front.png",
+                      "assets/images/siemens_hvac_interface_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "0.7A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/hvac_shutdown_interface.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Fire Door Release Module",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Electromechanical Release Module",
+                "description": "Controls automatic fire doors, releasing them in case of fire or alarm activation.",
+                "working_principle": "Receives FFCP signals to unlock or close fire doors as needed.",
+                "installation": "Installed near door frames or integrated with door actuator.",
+                "nfpa_reference": "NFPA 80, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Tyco",
+                    "model": "FDRM-150",
+                    "images": [
+                      "assets/images/tyco_fire_door_release_front.png",
+                      "assets/images/tyco_fire_door_release_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "0.6A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_door_release_module.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Sprinkler Flow Switch Interface",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Flow Switch Module",
+                "description": "Monitors water flow in sprinkler systems and signals FFCP for alarms.",
+                "working_principle": "Detects water movement and closes/open contacts to notify control panel.",
+                "installation": "Installed in sprinkler risers or main water lines.",
+                "nfpa_reference": "NFPA 13, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Victaulic",
+                    "model": "SFS-200",
+                    "images": [
+                      "assets/images/victaulic_sprinkler_flow_front.png",
+                      "assets/images/victaulic_sprinkler_flow_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "0.4A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/sprinkler_flow_switch_interface.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "name": "Fire Pump Controller",
+            "category": "Integration Devices",
+            "types": [
+              {
+                "type": "Jockey/Main/Diesel Pump Controller",
+                "description": "Controls fire pumps automatically based on system demand or alarm activation.",
+                "working_principle": "Monitors pressure switches and signals pumps to start/stop for firefighting.",
+                "installation": "Installed in pump room near FFCP or main pump system.",
+                "nfpa_reference": "NFPA 20, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "KSB",
+                    "model": "FPC-3000",
+                    "images": [
+                      "assets/images/ksb_fire_pump_controller_front.png",
+                      "assets/images/ksb_fire_pump_controller_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "120-240V AC",
+                      "current": "5A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/fire_pump_controller.mp4"
+                ]
+              }
+            ]
+          }
+        ],
+        "monitoringDevices": [
+          {
+            "id": "1",
+            "name": "Water Flow Switch",
+            "category": "Monitoring Devices",
+            "types": [
+              {
+                "type": "Standard Flow Switch",
+                "description": "Monitors water flow in sprinkler systems and notifies the FFCP in case of activation.",
+                "working_principle": "Detects movement of water in pipes and closes/open contacts to send signal to control panel.",
+                "installation": "Installed in sprinkler risers or main water lines.",
+                "nfpa_reference": "NFPA 13, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Victaulic",
+                    "model": "WFS-100",
+                    "images": [
+                      "assets/images/victaulic_water_flow_front.png",
+                      "assets/images/victaulic_water_flow_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "0.5A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/water_flow_switch.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Pressure Switch",
+            "category": "Monitoring Devices",
+            "types": [
+              {
+                "type": "Fire Pump Pressure Switch",
+                "description": "Monitors pressure in fire fighting systems and signals FFCP for pump activation or alarms.",
+                "working_principle": "Senses pressure changes and closes/open contacts to trigger system response.",
+                "installation": "Installed in main pump lines or risers.",
+                "nfpa_reference": "NFPA 20, NFPA 13, NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Siemens",
+                    "model": "PS-300",
+                    "images": [
+                      "assets/images/siemens_pressure_switch_front.png",
+                      "assets/images/siemens_pressure_switch_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "0.6A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/pressure_switch.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Tamper Switch",
+            "category": "Monitoring Devices",
+            "types": [
+              {
+                "type": "Tamper Detection Switch",
+                "description": "Detects unauthorized tampering or opening of fire fighting equipment enclosures.",
+                "working_principle": "Switch triggers when enclosure or valve is opened, sending signal to FFCP.",
+                "installation": "Installed on valve covers, cabinets, or equipment housings.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Honeywell",
+                    "model": "TS-100",
+                    "images": [
+                      "assets/images/honeywell_tamper_switch_front.png",
+                      "assets/images/honeywell_tamper_switch_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "0.3A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/tamper_switch.mp4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Supervisory Switch",
+            "category": "Monitoring Devices",
+            "types": [
+              {
+                "type": "System Supervisory Switch",
+                "description": "Monitors the status of fire fighting system components and reports abnormal conditions.",
+                "working_principle": "Switch closes or opens contacts to notify FFCP of supervisory conditions (e.g., valve closed, system inactive).",
+                "installation": "Installed on valves, controllers, or supervisory points.",
+                "nfpa_reference": "NFPA 72",
+                "manufacturers": [
+                  {
+                    "name": "Notifier",
+                    "model": "SS-200",
+                    "images": [
+                      "assets/images/notifier_supervisory_switch_front.png",
+                      "assets/images/notifier_supervisory_switch_side.png"
+                    ],
+                    "specifications": {
+                      "voltage": "24V DC",
+                      "current": "0.4A",
+                      "operating_temperature": "0 to 50 C"
+                    }
+                  }
+                ],
+                "videos": [
+                  "assets/videos/supervisory_switch.mp4"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
